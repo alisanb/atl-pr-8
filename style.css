@@ -1,0 +1,270 @@
+body{
+    background: #EEF2F9;
+    width: 1600px;
+}
+
+
+.main{
+    margin: 50px;
+    margin-top: 250px;
+}
+.box{
+    background-color: #fff;
+    height: 661px;
+    width: 887px;
+    top: 269px;
+    left: 356px;
+    border-radius: 15px;  
+    margin: auto;
+    box-shadow: 0px 24px 28px 9px #B3C1D954;
+
+}
+
+.boxbox{
+    width: 723px;
+    height: 497px;
+    top: 351px;
+    left: 438px;
+    gap: 32px;
+    margin-left: 82px;
+    margin-right: 82px;
+    padding-top: 82px ;
+    padding-bottom: 82px ;
+    display: flex;
+
+    
+}
+.divph{
+    width: 249px;
+    height: 223px;
+    flex: 0 0 auto;
+}
+.nayus{
+    width: 249px;
+    height: 223px;
+
+}
+
+.texts-and-prices{
+    width: 442px;
+    height: 497px;
+    gap: 32px;
+    flex: 1;
+}
+
+.freeship{
+    width: 112px;
+    height: 29px;
+    padding: 4px, 8px, 4px, 8px;
+    border-radius: 20px;
+    gap: 10px;
+    background: #191847;
+
+}
+
+.freeshiptext{
+    width: 112px;
+    height: 21px;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+    color:  #FFFFFF;
+}
+
+.freesh{
+    width: 419px;
+    height: 111px;
+    border-radius: 20px;
+
+}
+
+.info{
+    width: 419px;
+    height: 72px;
+    top: 39px;
+}
+
+.infonaus{
+    font-family: Poppins;
+font-size: 24px;
+font-weight: 600;
+line-height: 36px;
+letter-spacing: 0em;
+text-align: left;
+color: #191847;
+
+}
+
+.prices{
+    width: 365px;
+    height: 114px;
+
+}
+
+.prices-1{
+    width: 54px;
+    height: 21px;
+}
+
+.pr-content-1{
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191847;
+    text-decoration: line-through;
+    margin-top: 35px;
+}
+
+.prices-2{
+    width: 120px;
+    height: 72px;
+
+}
+
+.pr-content-2{
+    font-family: Poppins;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191847;
+    margin-top: 8px;
+
+}
+
+.prices-3{
+    width: 365px;
+    height: 21px;
+    opacity: 60%;
+    
+
+
+}
+
+.pr-content-3{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 350;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+
+.button-add{
+    width: 442px;
+height: 59px;
+padding: 16px;
+border-radius: 8px;
+gap: 10px;
+background: #4788E9;
+margin-top: 60px;
+border: none;
+box-shadow: 0px 7px 0px 0px #1C57EE;
+
+font-family: Poppins;
+color: #fff;
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+letter-spacing: 0em;
+text-align: center;
+
+
+}
+
+.invert{
+    width: 138px;
+    height: 21px;
+    gap: 8px;
+}
+
+.elipse{
+    width: 13px;
+    height: 13px;
+    background: #00D98B;
+    display: inline-block;
+    border-radius: 50%;
+
+}
+
+.inventar{
+    display: inline-block;
+    width: 117px;
+height: 21px;
+border-right-width: 2px;
+margin-right: 2px;
+margin-top: 30px;
+font-family: Poppins;
+font-size: 14px;
+font-weight: 390;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: left;
+
+
+}
+
+.two-butt{
+    margin-top: 50px;
+    width: 442px;
+    height: 64px;
+    gap: 16px;
+
+}
+
+.first-button{
+    width: 213px;
+height: 64px;
+padding: 16px;
+border-radius: 8px;
+border: 2px;
+gap: 10px;
+border: 2px solid #C9C9DA;
+background-color: #fff;
+
+
+font-family: Poppins;
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+letter-spacing: 0em;
+text-align: center;
+color:#191847 ;
+
+}
+
+.second-button{
+    width: 213px;
+height: 64px;
+padding: 16px;
+border-radius: 8px;
+border: 2px;
+gap: 10px;
+border: 2px solid #C9C9DA;
+background-color: #fff;
+
+font-family: Poppins;
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+letter-spacing: 0em;
+text-align: center;
+color:#191847 ;
+
+}
+
+.cart{
+    height: 16px;
+    width: 18px;
+color:#191847 ;
+}
+
