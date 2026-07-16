@@ -81,8 +81,8 @@ const landingConfig = {
                 double: "2 ədəd (Bütün evin maksimum qorunması)"
             },
             packageDataAttrs: {
-                base: "1 ədəd (Baz dəst) + 3 ₼ çatdırılma",
-                double: "2 ədəd (Maksimum qorunma dəsti) + PULSUZ ÇATDIRILMA"
+                base: "1 ədəd (Baz dəst) + 3 ₼ çatdırılma - 14 AZN",
+                double: "2 ədəd (Maksimum qorunma dəsti) + PULSUZ ÇATDIRILMA - 22 AZN"
             },
             popularRibbon: "Ən çox satılan",
 
