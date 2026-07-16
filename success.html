@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Спасибо за заказ!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2206596209770725');
+        fbq('track', 'PageView');
+</script>
+    <style>
+        .success_wrapper {
+            width: 480px;
+            display: flex;    
+            margin: 0 auto;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--bg-light);
+            background-image: linear-gradient(135deg, var(--bg-light) 0%, #DCE4EC 100%);
+        }
+        .icon {
+            font-size: 80px;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            text-shadow: 0 10px 20px rgba(0, 180, 216, 0.3);
+        }
+        .main_title {
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        .btn_back {
+            background-color: var(--primary-dark);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(26, 54, 38, 0.2);
+        }
+        .btn_back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(26, 54, 38, 0.3);
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<style>
+        .success_wrapper {
+            width: 480px;
+            display: flex;    
+            margin: 0 auto;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--bg-light);
+            background-image: linear-gradient(135deg, var(--bg-light) 0%, #DCE4EC 100%);
+        }
+        .icon {
+            font-size: 80px;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            text-shadow: 0 10px 20px rgba(0, 180, 216, 0.3);
+        }
+        .main_title {
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        .btn_back {
+            background-color: var(--primary-dark);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(26, 54, 38, 0.2);
+        }
+        .btn_back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(26, 54, 38, 0.3);
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="main_wrapper">
+        <div class="success_wrapper">
+            <div class="icon">✓</div>
+            <h1 class="main_title" id="success-title">Sifarişiniz üçün təşəkkür edirik!</h1>
+            <p class="subtitle" id="success-desc">Müraciətiniz uğurla göndərildi. Yaxın vaxtlarda menecerimiz təfərrüatları dəqiqləşdirmək üçün sizinlə əlaqə saxlayacaqdır.</p>
+            <a href="index.html" class="btn_back" id="success-back-btn">Ana səhifəyə qayıt</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const successTranslations = {
+                az: {
+                    title: "Sifarişiniz üçün təşəkkür edirik!",
+                    desc: "Müraciətiniz uğurla göndərildi. Yaxın vaxtlarda menecerimiz təfərrüatları dəqiqləşdirmək üçün sizinlə əlaqə saxlayacaqdır.",
+                    btn: "Ana səhifəyə qayıt",
+                    docTitle: "Təşəkkür edirik!"
+                },
+                ru: {
+                    title: "Спасибо за заказ!",
+                    desc: "Ваша заявка успешно отправлена. В ближайшее время с вами свяжется наш менеджер для уточнения деталей.",
+                    btn: "Вернуться на сайт",
+                    docTitle: "Спасибо за заказ!"
+                }
+            };
+
+            // Get lang parameter from URL query string
+            const urlParams = new URLSearchParams(window.location.search);
+            const activeLang = urlParams.get('lang') === 'ru' ? 'ru' : 'az';
+
+            // Localize page content
+            document.documentElement.lang = activeLang;
+            document.title = successTranslations[activeLang].docTitle;
+            document.getElementById('success-title').textContent = successTranslations[activeLang].title;
+            document.getElementById('success-desc').textContent = successTranslations[activeLang].desc;
+            
+            const backBtn = document.getElementById('success-back-btn');
+            if (backBtn) {
+                backBtn.textContent = successTranslations[activeLang].btn;
+                backBtn.href = `index.html?lang=${activeLang}`;
+            }
+        });
+    </script>
+</body>
+</html>
