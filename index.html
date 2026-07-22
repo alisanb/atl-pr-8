@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comprador Gaming - Computer Parts & Hardware</title>
+    <meta name="description" content="Comprador Gaming Baku">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-main: #ffffff;
+            --bg-card: #f8f9fa;
+            --bg-nav: rgba(255, 255, 255, 0.95);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent-primary: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-glow: rgba(37, 99, 235, 0.25);
+            --border-color: #e2e8f0;
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            --hero-gradient: linear-gradient(90deg, #ffffff 35%, rgba(255,255,255,0.85) 55%, rgba(255,255,255,0) 100%);
+            --radius-main: 16px;
+        }
+
+        [data-bs-theme="dark"] {
+            --bg-main: #090d16;
+            --bg-card: #0f172a;
+            --bg-nav: rgba(9, 13, 22, 0.95);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-primary: #3b82f6;
+            --accent-hover: #60a5fa;
+            --accent-glow: rgba(59, 130, 246, 0.35);
+            --border-color: #1e293b;
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --hero-gradient: linear-gradient(90deg, #090d16 35%, rgba(9,13,22,0.85) 55%, rgba(9,13,22,0) 100%);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Google Sans', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Science Gothic', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: var(--bg-nav);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .header-logo-img {
+            max-height: 40px;
+            width: auto;
+            max-width: 300px;
+            object-fit: contain;
+        }
+
+        /* Full Bleed Hero Section */
+        .hero-banner-wrap {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg-visual {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 65%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg-visual svg, .hero-bg-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--hero-gradient);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 620px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--accent-primary), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Call To Action Buttons */
+        .btn-cta {
+            background: var(--accent-primary);
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 16px 32px;
+            border: none;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-cta:hover {
+            background: var(--accent-hover);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px var(--accent-glow);
+        }
+
+        /* Cards */
+        .custom-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-main);
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px -15px var(--accent-glow);
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 180px;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            border: 1px dashed var(--border-color);
+        }
+
+        /* Category Card Styling */
+        .category-card-custom {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-main);
+            padding: 20px 12px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .category-card-custom:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -10px var(--accent-glow);
+            color: var(--accent-primary);
+        }
+
+        .category-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .badge-stock {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            font-weight: 600;
+        }
+
+        /* Form Inputs */
+        .form-control-custom {
+            background-color: var(--bg-main);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 10px;
+            padding: 12px 16px;
+        }
+
+        .form-control-custom:focus {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        /* Quick Action Bar */
+        .quick-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .badge-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent-primary);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .lang-dropdown .btn {
+            border-radius: 10px;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .lang-dropdown .dropdown-menu {
+            background: var(--bg-card);
+            border-color: var(--border-color);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .lang-dropdown .dropdown-item {
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-tag {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .price-old {
+            font-size: 0.9rem;
+            text-decoration: line-through;
+            color: var(--text-muted);
+            margin-right: 6px;
+        }
+
+        @media (max-width: 991px) {
+            .hero-bg-visual {
+                width: 100%;
+                opacity: 0.2;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+        <div class="container">
+            <a href="#" class="navbar-brand me-4">
+                <img src="https://comprador.az/img/COMPRADOR_LOGO.png" alt="Comprador Shop Logo" class="header-logo-img">
+            </a>
+
+            <div class="d-flex align-items-center gap-2 order-lg-3">
+                <div class="quick-actions me-1">
+                    <!-- Client-side In-page Language Selector -->
+                    <div class="dropdown lang-dropdown">
+                        <button class="btn d-flex align-items-center gap-1 dropdown-toggle" type="button" id="langSelectBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="current-flag">🇷🇺</span> <span id="current-code" class="d-none d-sm-inline">RU</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langSelectBtn">
+                            <li><a class="dropdown-item" onclick="setLanguage('az', '🇦🇿', 'AZ')"><span>🇦🇿</span> Azərbaycan</a></li>
+                            <li><a class="dropdown-item" onclick="setLanguage('ru', '🇷🇺', 'RU')"><span>🇷🇺</span> Русский</a></li>
+                            <li><a class="dropdown-item" onclick="setLanguage('en', '🇺🇸', 'EN')"><span>🇺🇸</span> English</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="icon-btn" title="Compare">
+                        <i class="bi bi-shuffle"></i>
+                        <span class="badge-count">0</span>
+                    </button>
+                    <button class="icon-btn" title="Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="badge-count">0</span>
+                    </button>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Theme">
+                        <i class="bi bi-sun-fill" id="theme-icon"></i>
+                    </button>
+                </div>
+
+                <button class="navbar-toggler border-0 shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                    <i class="bi bi-list fs-2 text-main"></i>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#categories" data-i18n="nav-categories">Категории</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#deals" data-i18n="nav-deals">Скидки</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#about" data-i18n="nav-about">О компании</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact-form" data-i18n="nav-contacts">Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#faq" data-i18n="nav-faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Edge-to-Edge Gradient Hero Banner -->
+    <section class="hero-banner-wrap">
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-bg-visual">
+            <!-- Edge-to-edge gradient backdrop image frame -->
+            <svg viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="cyberBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#0f172a"/>
+                        <stop offset="50%" stop-color="#1e3a8a"/>
+                        <stop offset="100%" stop-color="#2563eb"/>
+                    </linearGradient>
+                </defs>
+                <rect width="1000" height="600" fill="url(#cyberBg)"/>
+                <circle cx="650" cy="300" r="220" stroke="#60a5fa" stroke-width="2" stroke-dasharray="12 12" opacity="0.3"/>
+                <path d="M450 180H850V420H450V180Z" stroke="#ffffff" stroke-width="2" opacity="0.15"/>
+                <circle cx="580" cy="300" r="60" stroke="#3b82f6" stroke-width="4" opacity="0.4"/>
+                <circle cx="720" cy="300" r="60" stroke="#3b82f6" stroke-width="4" opacity="0.4"/>
+                <text x="650" y="520" text-anchor="middle" fill="#ffffff" font-size="22" font-family="'Science Gothic', sans-serif" opacity="0.5" font-weight="700">HERO IMAGE PLACEHOLDER</text>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge badge-stock mb-3" data-i18n="hero-badge"><i class="bi bi-lightning-charge-fill me-1"></i> Официальный Дистрибьютор</span>
+                <h1 class="hero-title" data-i18n="hero-title">Твой Эпический <span>Уровень Железа</span> Начинается Здесь</h1>
+                <p class="text-muted fs-5 mb-4" data-i18n="hero-desc">Премиальные комплектующие, готовые игровые сборки и официальная гарантия с доставкой по всей стране.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#deals" class="btn btn-cta" data-i18n="hero-cta-main">
+                        <i class="bi bi-cart-fill"></i> Выбрать Железо
+                    </a>
+                    <a href="#about" class="btn btn-outline-secondary rounded-3 px-4 py-3 fw-bold" data-i18n="hero-cta-sub">
+                        Узнать Больше
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="h2 fw-bold" data-i18n="cat-title">Покупки по категориям</h2>
+                <p class="text-muted" data-i18n="cat-sub">Выберите нужный раздел техники</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-3 col-lg-2">
+                    <a href="#deals" class="category-card-custom">
+                        <div class="category-icon-box"><i class="bi bi-cpu"></i></div>
+                        <h6 class="fw-bold mb-1 fs-6" data-i18n="cat-1">Комплектующие</h6>
+                        <span class="badge bg-primary rounded-pill">8</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <a href="#deals" class="category-card-custom">
+                        <div class="category-icon-box"><i class="bi bi-display"></i></div>
+                        <h6 class="fw-bold mb-1 fs-6" data-i18n="cat-2">Мониторы</h6>
+                        <span class="badge bg-primary rounded-pill">12</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <a href="#deals" class="category-card-custom">
+                        <div class="category-icon-box"><i class="bi bi-laptop"></i></div>
+                        <h6 class="fw-bold mb-1 fs-6" data-i18n="cat-3">Ноутбуки</h6>
+                        <span class="badge bg-primary rounded-pill">3</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <a href="#deals" class="category-card-custom">
+                        <div class="category-icon-box"><i class="bi bi-mouse"></i></div>
+                        <h6 class="fw-bold mb-1 fs-6" data-i18n="cat-4">Аксессуары</h6>
+                        <span class="badge bg-primary rounded-pill">5</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <a href="#deals" class="category-card-custom">
+                        <div class="category-icon-box"><i class="bi bi-pc-display"></i></div>
+                        <h6 class="fw-bold mb-1 fs-6" data-i18n="cat-5">Компьютеры</h6>
+                        <span class="badge bg-primary rounded-pill">3</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <a href="#deals" class="category-card-custom">
+                        <div class="category-icon-box"><i class="bi bi-headphones"></i></div>
+                        <h6 class="fw-bold mb-1 fs-6" data-i18n="cat-6">Аудиосистемы</h6>
+                        <span class="badge bg-primary rounded-pill">6</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discount Deals Section -->
+    <section id="deals" class="py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h2 class="h3 fw-bold mb-1" data-i18n="deals-title">Товары со скидкой</h2>
+                    <p class="text-muted mb-0" data-i18n="deals-sub">Успей забрать по лучшим ценам в Баку</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="custom-card">
+                        <div class="placeholder-img"><i class="bi bi-fan fs-1 text-primary"></i></div>
+                        <span class="badge badge-stock mb-2 w-auto align-self-start"><i class="bi bi-check-circle"></i> В наличии (5)</span>
+                        <h3 class="h6 fw-bold text-truncate mb-2">Thermaltake UX 200 ARGB</h3>
+                        <div class="mt-auto pt-3 border-top border-secondary-subtle d-flex align-items-center justify-content-between">
+                            <div><span class="price-old">40.00 ₼</span><span class="price-tag">35.00 ₼</span></div>
+                            <button class="btn btn-sm btn-cta px-3"><i class="bi bi-bag-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="custom-card">
+                        <div class="placeholder-img"><i class="bi bi-memory fs-1 text-primary"></i></div>
+                        <span class="badge badge-stock mb-2 w-auto align-self-start"><i class="bi bi-check-circle"></i> В наличии (4)</span>
+                        <h3 class="h6 fw-bold text-truncate mb-2">Kingston DDR4 32GB 3200</h3>
+                        <div class="mt-auto pt-3 border-top border-secondary-subtle d-flex align-items-center justify-content-between">
+                            <div><span class="price-old">230.00 ₼</span><span class="price-tag">199.00 ₼</span></div>
+                            <button class="btn btn-sm btn-cta px-3"><i class="bi bi-bag-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="custom-card">
+                        <div class="placeholder-img"><i class="bi bi-motherboard fs-1 text-primary"></i></div>
+                        <span class="badge badge-stock mb-2 w-auto align-self-start"><i class="bi bi-check-circle"></i> В наличии (4)</span>
+                        <h3 class="h6 fw-bold text-truncate mb-2">MSI X870 GAMING PLUS WIFI</h3>
+                        <div class="mt-auto pt-3 border-top border-secondary-subtle d-flex align-items-center justify-content-between">
+                            <div><span class="price-tag">579.00 ₼</span></div>
+                            <button class="btn btn-sm btn-cta px-3"><i class="bi bi-bag-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="custom-card">
+                        <div class="placeholder-img"><i class="bi bi-water fs-1 text-primary"></i></div>
+                        <span class="badge badge-stock mb-2 w-auto align-self-start"><i class="bi bi-check-circle"></i> В наличии (33)</span>
+                        <h3 class="h6 fw-bold text-truncate mb-2">MSI MAG CORELIQUID A15 360</h3>
+                        <div class="mt-auto pt-3 border-top border-secondary-subtle d-flex align-items-center justify-content-between">
+                            <div><span class="price-tag">231.00 ₼</span></div>
+                            <button class="btn btn-sm btn-cta px-3"><i class="bi bi-bag-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Mission Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-5">
+                <h2 class="h2 fw-bold mb-3" data-i18n="about-title">О Компании Comprador</h2>
+                <p class="text-muted fs-5" data-i18n="about-lead">Узнайте нашу историю, миссию и ценности, которые побуждают нас предоставлять лучшие товары и услуги с 2010 года.</p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <div class="icon-btn mx-auto mb-3" style="width: 60px; height: 60px;"><i class="bi bi-rocket-takeoff fs-3 text-primary"></i></div>
+                        <h3 class="h5 fw-bold mb-2" data-i18n="mission-title">Наша миссия</h3>
+                        <p class="text-muted mb-0" data-i18n="mission-desc">Предоставлять высококачественные товары и отличный сервис, вдохновляющий и поддерживающий наше сообщество.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <div class="icon-btn mx-auto mb-3" style="width: 60px; height: 60px;"><i class="bi bi-shield-check fs-3 text-primary"></i></div>
+                        <h3 class="h5 fw-bold mb-2" data-i18n="values-title">Наши ценности</h3>
+                        <p class="text-muted mb-0" data-i18n="values-desc">Честность, ориентация на клиента, инновации и командная работа — основа всего, что мы делаем.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <div class="icon-btn mx-auto mb-3" style="width: 60px; height: 60px;"><i class="bi bi-eye fs-3 text-primary"></i></div>
+                        <h3 class="h5 fw-bold mb-2" data-i18n="vision-title">Наше видение</h3>
+                        <p class="text-muted mb-0" data-i18n="vision-desc">Быть ведущим брендом, которому доверяют за инновации, надёжность и положительное влияние в нашей отрасли.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Contact Section & Map -->
+    <section id="contact-form" class="py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="h2 fw-bold mb-2" data-i18n="contact-hero-title">Связаться с нами</h2>
+                <p class="text-muted fs-5" data-i18n="contact-hero-sub">Мы будем рады вашему сообщению. Напишите нам, и мы ответим как можно скорее.</p>
+            </div>
+
+            <!-- Contact Cards -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mx-auto mb-3 text-white rounded-circle" style="width: 70px; height: 70px; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);">
+                            <i class="bi bi-geo-alt-fill fs-2"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2" data-i18n="card-store-title">Посетите наш магазин</h3>
+                        <p class="text-muted small mb-2">Район Насими, ул. Сулеймана Рагимова, 195, Баку, Азербайджан AZ1014</p>
+                        <small class="text-secondary">Пн-Сб: 10:00 - 20:00<br>Вс: 12:00 - 18:00</small>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mx-auto mb-3 text-white rounded-circle" style="width: 70px; height: 70px; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                            <i class="bi bi-telephone-fill fs-2"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2" data-i18n="card-call-title">Позвоните нам</h3>
+                        <p class="text-muted small mb-2">
+                            <a href="tel:+994556200066" class="text-reset text-decoration-none d-block">+994 55 620 00 66</a>
+                            <a href="tel:+994706200066" class="text-reset text-decoration-none d-block">+994 70 620 00 66</a>
+                            <a href="tel:+994776200066" class="text-reset text-decoration-none d-block">+994 77 620 00 66</a>
+                        </p>
+                        <small class="text-secondary">Продажи и поддержка (Пн-Пт 9:00-18:00)</small>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="custom-card text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mx-auto mb-3 text-white rounded-circle" style="width: 70px; height: 70px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                            <i class="bi bi-envelope-fill fs-2"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2" data-i18n="card-mail-title">Напишите нам</h3>
+                        <p class="text-muted small mb-2">
+                            <a href="mailto:info@comprador.az" class="text-reset text-decoration-none d-block">info@comprador.az</a>
+                            <a href="mailto:support@comprador.az" class="text-reset text-decoration-none d-block">support@comprador.az</a>
+                        </p>
+                        <small class="text-secondary">Отвечаем в течение 24 часов</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Form & Map Block -->
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="custom-card">
+                        <h3 class="h4 fw-bold mb-4" data-i18n="form-heading">Напишите нам</h3>
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold" data-i18n="lbl-fname">Имя *</label>
+                                    <input type="text" class="form-control form-control-custom" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold" data-i18n="lbl-lname">Фамилия *</label>
+                                    <input type="text" class="form-control form-control-custom" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold" data-i18n="lbl-email">Адрес электронной почты *</label>
+                                <input type="email" class="form-control form-control-custom" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold" data-i18n="lbl-phone">Номер телефона</label>
+                                <input type="text" placeholder="(__)___-__-__" class="form-control form-control-custom">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold" data-i18n="lbl-subject">Тема *</label>
+                                <select class="form-control form-control-custom" required>
+                                    <option value="" data-i18n="opt-select">Выберите тему</option>
+                                    <option value="general" data-i18n="opt-1">Общий вопрос</option>
+                                    <option value="product" data-i18n="opt-2">Вопрос о товаре</option>
+                                    <option value="support" data-i18n="opt-3">Техническая поддержка</option>
+                                    <option value="order" data-i18n="opt-4">Статус заказа</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" data-i18n="lbl-msg">Сообщение *</label>
+                                <textarea class="form-control form-control-custom" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-cta w-100 py-3" data-i18n="btn-send">
+                                <i class="bi bi-send-fill me-2"></i> Отправить сообщение
+                            </button>
+                            <div id="formSuccess" class="alert alert-success mt-3 d-none" data-i18n="msg-success">Сообщение успешно отправлено!</div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Google Maps & Store Info -->
+                <div class="col-lg-6">
+                    <div class="custom-card">
+                        <h3 class="h4 fw-bold mb-3" data-i18n="map-heading">Найдите нас</h3>
+                        <div class="rounded-3 overflow-hidden mb-4" style="height: 280px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.2844985382517!2d49.8457882!3d40.3803868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d7c920dc073%3A0x2b9d64dbad663e1d!2sComprador!5e0!3m2!1sru!2saz!4v1760169355304!5m2!1sru!2saz" style="border:0; width:100%; height:100%;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="vstack gap-2 small text-muted">
+                            <div><i class="bi bi-geo-alt text-primary me-2"></i> Район Насими, ул. Сулеймана Рагимова, 195, Баку AZ1014</div>
+                            <div><i class="bi bi-clock text-primary me-2"></i> Пн-Сб: 10:00 - 20:00 | Вс: 12:00 - 18:00</div>
+                            <div><i class="bi bi-credit-card text-primary me-2"></i> Оплата: Наличные, банковские карты</div>
+                            <div><i class="bi bi-car-front text-primary me-2"></i> Парковка: Бесплатная парковка перед магазином</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="h2 fw-bold text-center mb-4" data-i18n="faq-title">Часто задаваемые вопросы</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" data-i18n="faq1-q">
+                            Сколько лет вы работаете?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" data-i18n="faq1-a">
+                            Мы с гордостью обслуживаем наших клиентов с 2010 года и растём с вашей поддержкой.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" data-i18n="faq2-q">
+                            Где вы находитесь?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" data-i18n="faq2-a">
+                            Наш главный офис находится в Баку, Азербайджан. Мы осуществляем доставку по всей стране.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Gaming CTA Banner -->
+    <section class="py-5">
+        <div class="container">
+            <div class="p-5 text-center text-white rounded-4" style="background: linear-gradient(135deg, var(--accent-primary) 0%, #1e40af 100%);">
+                <h3 class="h2 fw-bold mb-3" data-i18n="bottom-cta-title">Готовы улучшить своё игровое оборудование?</h3>
+                <p class="fs-5 mb-4 opacity-90 mx-auto" style="max-width: 650px;" data-i18n="bottom-cta-desc">Ознакомьтесь с нашей обширной коллекцией игровых периферийных устройств и аксессуаров. Найдите всё необходимое для лучшего игрового опыта.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#deals" class="btn btn-light btn-lg px-4 fw-bold rounded-pill" data-i18n="bottom-cta-btn1">
+                        Смотреть товары <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                    <a href="#about" class="btn btn-outline-light btn-lg px-4 fw-bold rounded-pill" data-i18n="bottom-cta-btn2">
+                        О компании
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Contacts -->
+    <footer id="contacts" class="py-5 bg-body-tertiary border-top border-secondary-subtle">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a href="#" class="d-inline-block mb-3">
+                        <img src="https://comprador.az/img/COMPRADOR_LOGO.png" alt="Comprador Shop Logo" class="header-logo-img">
+                    </a>
+                    <p class="text-muted" data-i18n="footer-desc">Ваш проверенный эксперт и поставщик компьютерной техники, игровых ПК и комплектующих в Баку.</p>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h4 class="h6 fw-bold mb-3" data-i18n="footer-contacts">Контакты</h4>
+                    <ul class="list-unstyled text-muted mb-0">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i>Баку, Азербайджан</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2 text-primary"></i>info@comprador.az</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <h4 class="h6 fw-bold mb-3" data-i18n="footer-social">Мы в соцсетях</h4>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="icon-btn" title="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="icon-btn" title="Telegram"><i class="bi bi-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4 border-top border-secondary-subtle text-muted">
+                <small>© 2026 Comprador Shop. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- In-Page Language & Theme Script -->
+    <script>
+        const translations = {
+            ru: {
+                "nav-categories": "Категории",
+                "nav-deals": "Скидки",
+                "nav-about": "О компании",
+                "nav-faq": "FAQ",
+                "nav-contacts": "Контакты",
+                "hero-badge": "<i class=\"bi bi-lightning-charge-fill me-1\"></i> Официальный Дистрибьютор",
+                "hero-title": "Твой Эпический <span>Уровень Железа</span> Начинается Здесь",
+                "hero-desc": "Премиальные комплектующие, готовые игровые сборки и официальная гарантия с доставкой по всей стране.",
+                "hero-cta-main": "<i class=\"bi bi-cart-fill\"></i> Выбрать Железо",
+                "hero-cta-sub": "Узнать Больше",
+                "cat-title": "Покупки по категориям",
+                "cat-sub": "Выберите нужный раздел техники",
+                "cat-1": "Комплектующие",
+                "cat-2": "Мониторы",
+                "cat-3": "Ноутбуки",
+                "cat-4": "Аксессуары",
+                "cat-5": "Компьютеры",
+                "cat-6": "Аудиосистемы",
+                "deals-title": "Товары со скидкой",
+                "deals-sub": "Успей забрать по лучшим ценам в Баку",
+                "about-title": "О Компании Comprador",
+                "about-lead": "Узнайте нашу историю, миссию и ценности, которые побуждают нас предоставлять лучшие товары и услуги с 2010 года.",
+                "mission-title": "Наша миссия",
+                "mission-desc": "Предоставлять высококачественные товары и отличный сервис, вдохновляющий и поддерживающий наше сообщество.",
+                "values-title": "Наши ценности",
+                "values-desc": "Честность, ориентация на клиента, инновации и командная работа — основа всего, что мы делаем.",
+                "vision-title": "Наше видение",
+                "vision-desc": "Быть ведущим брендом, которому доверяют за инновации, надёжность и положительное влияние в нашей отрасли.",
+                "contact-hero-title": "Связаться с нами",
+                "contact-hero-sub": "Мы будем рады вашему сообщению. Напишите нам, и мы ответим как можно скорее.",
+                "card-store-title": "Посетите наш магазин",
+                "card-call-title": "Позвоните нам",
+                "card-mail-title": "Напишите нам",
+                "form-heading": "Напишите нам",
+                "lbl-fname": "Имя *",
+                "lbl-lname": "Фамилия *",
+                "lbl-email": "Адрес электронной почты *",
+                "lbl-phone": "Номер телефона",
+                "lbl-subject": "Тема *",
+                "opt-select": "Выберите тему",
+                "opt-1": "Общий вопрос",
+                "opt-2": "Вопрос о товаре",
+                "opt-3": "Техническая поддержка",
+                "opt-4": "Статус заказа",
+                "lbl-msg": "Сообщение *",
+                "btn-send": "<i class=\"bi bi-send-fill me-2\"></i> Отправить сообщение",
+                "msg-success": "Сообщение успешно отправлено!",
+                "map-heading": "Найдите нас",
+                "faq-title": "Часто задаваемые вопросы",
+                "faq1-q": "Сколько лет вы работаете?",
+                "faq1-a": "Мы с гордостью обслуживаем наших клиентов с 2010 года и растём с вашей поддержкой.",
+                "faq2-q": "Где вы находитесь?",
+                "faq2-a": "Наш главный офис находится в Баку, Азербайджан. Мы осуществляем доставку по всей стране.",
+                "bottom-cta-title": "Готовы улучшить своё игровое оборудование?",
+                "bottom-cta-desc": "Ознакомьтесь с нашей обширной коллекцией игровых периферийных устройств и аксессуаров. Найдите всё необходимое для лучшего игрового опыта.",
+                "bottom-cta-btn1": "Смотреть товары <i class=\"bi bi-arrow-right ms-1\"></i>",
+                "bottom-cta-btn2": "О компании",
+                "footer-desc": "Ваш проверенный эксперт и поставщик компьютерной техники, игровых ПК и комплектующих в Баку.",
+                "footer-contacts": "Контакты",
+                "footer-social": "Мы в соцсетях"
+            },
+            az: {
+                "nav-categories": "Kateqoriyalar",
+                "nav-deals": "Endirimlər",
+                "nav-about": "Haqqımızda",
+                "nav-faq": "FAQ",
+                "nav-contacts": "Əlaqə",
+                "hero-badge": "<i class=\"bi bi-lightning-charge-fill me-1\"></i> Rəsmi Distribyutor",
+                "hero-title": "Sənin Qeyminq <span>Texnika Səviyyən</span> Buradan Başlayır",
+                "hero-desc": "Yüksək keyfiyyətli kompyuter hissələri, hazır oyun sistemləri və ölkə daxili rəsmi zəmanətli çatdırılma.",
+                "hero-cta-main": "<i class=\"bi bi-cart-fill\"></i> Məhsullara Bax",
+                "hero-cta-sub": "Ətraflı Öyrən",
+                "cat-title": "Kateqoriyalara görə alış-veriş",
+                "cat-sub": "İstədiyiniz texnika bölməsini seçin",
+                "cat-1": "Komplektasiya",
+                "cat-2": "Monitorlar",
+                "cat-3": "Noutbuklar",
+                "cat-4": "Aksesuarlar",
+                "cat-5": "Kompyuterlər",
+                "cat-6": "Audio sistemlər",
+                "deals-title": "Endirimdə olan məhsullar",
+                "deals-sub": "Bakıda ən sərfəli qiymətlərlə əldə etməyə tələsin",
+                "about-title": "Comprador Şirkəti Haqqında",
+                "about-lead": "2010-cu ildən bəri sizə ən yaxşı məhsul və xidmətləri təqdim etməyə sövq edən tariximiz, missiyamız və dəyərlərimizlə tanış olun.",
+                "mission-title": "Missiyamız",
+                "mission-desc": "Cəmiyyətimizi ilhamlandıran və dəstəkləyən yüksək keyfiyyətli məhsullar və əla xidmət təqdim etmək.",
+                "values-title": "Dəyərlərimiz",
+                "values-desc": "Dürüstlük, müştəri yönümlülük, innovasiya və komanda işi gördüyümüz hər şeyin əsasıdır.",
+                "vision-title": "Baxışımız",
+                "vision-desc": "Sənayemizdə innovasiya, etibarlılıq və müsbət təsirimizə görə etibar edilən aparıcı brend olmaq.",
+                "contact-hero-title": "Bizimlə əlaqə saxlayın",
+                "contact-hero-sub": "Məktubunuzu almaqdan şad olarıq. Bize yazın, ən qısa zamanda cavablandıracağıq.",
+                "card-store-title": "Mağazamıza gəlin",
+                "card-call-title": "Bizə zəng edin",
+                "card-mail-title": "Bizə yazın",
+                "form-heading": "Bizə mesaj göndərin",
+                "lbl-fname": "Ad *",
+                "lbl-lname": "Soyad *",
+                "lbl-email": "E-poçt ünvanı *",
+                "lbl-phone": "Telefon nömrəsi",
+                "lbl-subject": "Mövzu *",
+                "opt-select": "Mövzunu seçin",
+                "opt-1": "Ümumi sual",
+                "opt-2": "Məhsul haqqında sual",
+                "opt-3": "Texniki dəstək",
+                "opt-4": "Sifariş statusu",
+                "lbl-msg": "Mesajınız *",
+                "btn-send": "<i class=\"bi bi-send-fill me-2\"></i> Mesajı göndərin",
+                "msg-success": "Mesajınız uğurla göndərildi!",
+                "map-heading": "Ünvanımız",
+                "faq-title": "Tez-tez verilən suallar",
+                "faq1-q": "Neçə ildir fəaliyyət göstərirsiniz?",
+                "faq1-a": "2010-cu ildən müştərilərimizə qürurla xidmət edirik və dəstəyinizlə böyüyürük.",
+                "faq2-q": "Harada yerləşirsiniz?",
+                "faq2-a": "Baş ofisimiz Bakı şəhərində yerləşir. Ölkə üzrə çatdırılmanı həyata keçiririk.",
+                "bottom-cta-title": "Oyun avadanlığınızı yeniləməyə hazırsınız?",
+                "bottom-cta-desc": "Geniş oyun aksesuarları kolleksiyamızla tanış olun. Ən yaxşı oyun təcrübəsi üçün lazım olan hər şeyi tapın.",
+                "bottom-cta-btn1": "Məhsullara bax <i class=\"bi bi-arrow-right ms-1\"></i>",
+                "bottom-cta-btn2": "Haqqımızda",
+                "footer-desc": "Bakıda kompyuter avadanlıqları və oyun sistemləri üzrə etibarlı tərəfdaşınız.",
+                "footer-contacts": "Əlaqə",
+                "footer-social": "Sosial şəbəkələrimiz"
+            },
+            en: {
+                "nav-categories": "Categories",
+                "nav-deals": "Hot Deals",
+                "nav-about": "About Us",
+                "nav-faq": "FAQ",
+                "nav-contacts": "Contacts",
+                "hero-badge": "<i class=\"bi bi-lightning-charge-fill me-1\"></i> Official Distributor",
+                "hero-title": "Your Next <span>Gaming Upgrade</span> Starts Here",
+                "hero-desc": "Premium hardware components, custom gaming builds, and official warranty delivered across Azerbaijan.",
+                "hero-cta-main": "<i class=\"bi bi-cart-fill\"></i> Browse Hardware",
+                "hero-cta-sub": "Learn More",
+                "cat-title": "Shop by Categories",
+                "cat-sub": "Choose your desired tech department",
+                "cat-1": "Components",
+                "cat-2": "Monitors",
+                "cat-3": "Laptops",
+                "cat-4": "Accessories",
+                "cat-5": "Computers",
+                "cat-6": "Audio Systems",
+                "deals-title": "Discounted Products",
+                "deals-sub": "Grab the best PC component deals in Baku",
+                "about-title": "About Comprador",
+                "about-lead": "Learn about our story, mission, and values driving us to deliver top-tier tech products since 2010.",
+                "mission-title": "Our Mission",
+                "mission-desc": "Providing high-quality products and excellent service that inspires and supports our gaming community.",
+                "values-title": "Our Values",
+                "values-desc": "Integrity, customer focus, innovation, and teamwork form the core of everything we do.",
+                "vision-title": "Our Vision",
+                "vision-desc": "To be a leading brand trusted for innovation, reliability, and positive impact in our industry.",
+                "contact-hero-title": "Get In Touch",
+                "contact-hero-sub": "We'd love to hear from you. Send us a message and we'll reply as soon as possible.",
+                "card-store-title": "Visit Our Store",
+                "card-call-title": "Call Us",
+                "card-mail-title": "Email Us",
+                "form-heading": "Send Us A Message",
+                "lbl-fname": "First Name *",
+                "lbl-lname": "Last Name *",
+                "lbl-email": "Email Address *",
+                "lbl-phone": "Phone Number",
+                "lbl-subject": "Subject *",
+                "opt-select": "Select a subject",
+                "opt-1": "General Inquiry",
+                "opt-2": "Product Question",
+                "opt-3": "Technical Support",
+                "opt-4": "Order Status",
+                "lbl-msg": "Message *",
+                "btn-send": "<i class=\"bi bi-send-fill me-2\"></i> Send Message",
+                "msg-success": "Message sent successfully!",
+                "map-heading": "Find Us",
+                "faq-title": "Frequently Asked Questions",
+                "faq1-q": "How long have you been in business?",
+                "faq1-a": "We have been proudly serving our customers since 2010 and growing with your support.",
+                "faq2-q": "Where are you located?",
+                "faq2-a": "Our main office is located in Baku, Azerbaijan. We deliver nationwide.",
+                "bottom-cta-title": "Ready to Upgrade Your Gaming Gear?",
+                "bottom-cta-desc": "Explore our wide collection of gaming peripherals and hardware components.",
+                "bottom-cta-btn1": "Shop Products <i class=\"bi bi-arrow-right ms-1\"></i>",
+                "bottom-cta-btn2": "About Company",
+                "footer-desc": "Your trusted expert and supplier of PC parts and gaming hardware in Baku.",
+                "footer-contacts": "Contact Us",
+                "footer-social": "Follow Us"
+            }
+        };
+
+        function setLanguage(langKey, flagEmoji, codeText) {
+            document.getElementById('current-flag').textContent = flagEmoji;
+            document.getElementById('current-code').textContent = codeText;
+            document.documentElement.lang = langKey;
+
+            const langData = translations[langKey];
+            if (!langData) return;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (langData[key]) {
+                    el.innerHTML = langData[key];
+                }
+            });
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const alert = document.getElementById('formSuccess');
+            alert.classList.remove('d-none');
+            setTimeout(() => {
+                alert.classList.add('d-none');
+                e.target.reset();
+            }, 3000);
+        }
+
+        // Theme Switcher Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlTag = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlTag.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlTag.setAttribute('data-bs-theme', newTheme);
+            themeIcon.className = newTheme === 'light' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+        });
+    </script>
+</body>
+</html>
